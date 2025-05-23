@@ -23,7 +23,7 @@
       ]
     },
     "perplexityai": {
-      "url": "https://mcp.composio.dev/composio/server/639cb323-8245-493a-a808-7fdf217cc865",
+      "url": "https://mcp.composio.dev/composio/server/yours",
       "alwaysAllow": [
         "PERPLEXITYAI_PERPLEXITY_AI_SEARCH"
       ]
