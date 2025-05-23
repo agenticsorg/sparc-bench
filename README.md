@@ -1,4 +1,4 @@
-# Roo SPARC Coding Evaluation & Benchmark System
+# Roo Code Evaluation & Benchmarking System
 
 **A comprehensive benchmarking platform that evaluates AI coding agents using real-world GitHub issues from SWE-bench, integrated with the Roo SPARC methodology for structured, secure, and measurable software engineering workflows.**
 
@@ -48,6 +48,48 @@ SWE-bench provides thousands of real GitHub issues with ground-truth solutions a
 - **Modular Design**: Files limited to 500 lines maximum
 - **Isolated Execution**: Task-specific workspaces
 - **Solution Security**: No solution exposure during active problem solving
+
+
+## 🎯 Benefits
+
+### For AI Researchers
+- **Standardized Evaluation**: Consistent methodology across experiments
+- **Comprehensive Metrics**: Beyond simple pass/fail to include efficiency and quality
+- **Real-World Validation**: Actual GitHub issues, not synthetic problems
+- **Reproducible Results**: Detailed execution logs and structured workflows
+
+### for Development Teams
+- **Code Quality Assessment**: Security, modularity, and maintainability metrics
+- **Methodology Validation**: SPARC workflow effectiveness measurement
+- **Performance Optimization**: Identify bottlenecks and improvement opportunities
+- **Compliance Tracking**: Ensure adherence to coding standards and security practices
+
+### For Platform Providers
+- **Benchmark Comparisons**: Standardized evaluation across different AI systems
+- **Cost Analysis**: Resource utilization and efficiency metrics
+- **Quality Assurance**: Automated validation of AI-generated solutions
+- **Continuous Improvement**: Data-driven enhancement of AI capabilities
+
+
+## 📈 Evaluation Metrics
+
+### Core Performance Indicators
+
+| Metric | Description | Goal |
+|--------|-------------|------|
+| **Correctness** | Unit test pass rate | Functional accuracy |
+| **Steps** | Number of execution steps | Efficiency measurement |
+| **Time** | Wall-clock completion time | Performance assessment |
+| **Cost** | Token usage and API costs | Resource efficiency |
+| **Complexity** | Step-based task categorization | Difficulty analysis |
+
+### Advanced Analytics
+
+- **Repository Performance**: Success rates by codebase
+- **Mode Effectiveness**: Performance comparison across AI modes
+- **Solution Quality**: Code quality and maintainability metrics
+- **Security Compliance**: Adherence to secure coding practices
+- **Methodology Adherence**: SPARC workflow compliance
 
 ---
 
@@ -112,28 +154,6 @@ sparc-bench/
 ├─ .roomodes                  # Mode configurations and instructions
 └─ plans/                     # Architecture and planning docs
 ```
-
----
-
-## 📈 Evaluation Metrics
-
-### Core Performance Indicators
-
-| Metric | Description | Goal |
-|--------|-------------|------|
-| **Correctness** | Unit test pass rate | Functional accuracy |
-| **Steps** | Number of execution steps | Efficiency measurement |
-| **Time** | Wall-clock completion time | Performance assessment |
-| **Cost** | Token usage and API costs | Resource efficiency |
-| **Complexity** | Step-based task categorization | Difficulty analysis |
-
-### Advanced Analytics
-
-- **Repository Performance**: Success rates by codebase
-- **Mode Effectiveness**: Performance comparison across AI modes
-- **Solution Quality**: Code quality and maintainability metrics
-- **Security Compliance**: Adherence to secure coding practices
-- **Methodology Adherence**: SPARC workflow compliance
 
 ---
 
@@ -215,26 +235,6 @@ All results are stored in structured SQLite format for:
 - Performance regression detection
 
 ---
-
-## 🎯 Benefits
-
-### For AI Researchers
-- **Standardized Evaluation**: Consistent methodology across experiments
-- **Comprehensive Metrics**: Beyond simple pass/fail to include efficiency and quality
-- **Real-World Validation**: Actual GitHub issues, not synthetic problems
-- **Reproducible Results**: Detailed execution logs and structured workflows
-
-### for Development Teams
-- **Code Quality Assessment**: Security, modularity, and maintainability metrics
-- **Methodology Validation**: SPARC workflow effectiveness measurement
-- **Performance Optimization**: Identify bottlenecks and improvement opportunities
-- **Compliance Tracking**: Ensure adherence to coding standards and security practices
-
-### For Platform Providers
-- **Benchmark Comparisons**: Standardized evaluation across different AI systems
-- **Cost Analysis**: Resource utilization and efficiency metrics
-- **Quality Assurance**: Automated validation of AI-generated solutions
-- **Continuous Improvement**: Data-driven enhancement of AI capabilities
 
 ---
 
