@@ -1,0 +1,20 @@
+{
+  "mode": "code",
+  "task_id": "django__django-11179",
+  "status": "completed",
+  "start_time": "2025-05-23T01:26:10.913705",
+  "end_time": "2025-05-23T01:26:10.913712",
+  "output": {
+    "patch_generated": true,
+    "files_modified": [
+      "astropy/modeling/separable.py"
+    ],
+    "lines_changed": 1,
+    "patch_content": "diff --git a/django/db/models/deletion.py b/django/db/models/deletion.py\n--- a/django/db/models/deletion.py\n+++ b/django/db/models/deletion.py\n@@ -277,6 +277,7 @@ def delete(self):\n             if self.can_fast_delete(instance):\n                 with transaction.mark_for_rollback_on_error():\n                     count = sql.DeleteQuery(model).delete_batch([instance.pk], self.using)\n+                setattr(instance, model._meta.pk.attname, None)\n                 return count, {model._meta.label: count}\n \n         with transaction.atomic(using=self.using, savepoint=False):\n"
+  },
+  "metadata": {
+    "complexity_score": 4,
+    "estimated_time": 35,
+    "repository": "django/django"
+  }
+}

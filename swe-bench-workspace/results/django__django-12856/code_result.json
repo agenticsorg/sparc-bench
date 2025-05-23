@@ -1,0 +1,20 @@
+{
+  "mode": "code",
+  "task_id": "django__django-12856",
+  "status": "completed",
+  "start_time": "2025-05-23T01:26:10.952706",
+  "end_time": "2025-05-23T01:26:10.952713",
+  "output": {
+    "patch_generated": true,
+    "files_modified": [
+      "astropy/modeling/separable.py"
+    ],
+    "lines_changed": 1,
+    "patch_content": "diff --git a/django/db/models/base.py b/django/db/models/base.py\n--- a/django/db/models/base.py\n+++ b/django/db/models/base.py\n@@ -1926,6 +1926,12 @@ def _check_constraints(cls, databases):\n                         id='models.W038',\n                     )\n                 )\n+            fields = (\n+                field\n+                for constraint in cls._meta.constraints if isinstance(constraint, UniqueConstraint)\n+                for field in constraint.fields\n+            )\n+            errors.extend(cls._check_local_fields(fields, 'constraints'))\n         return errors\n \n \n"
+  },
+  "metadata": {
+    "complexity_score": 4,
+    "estimated_time": 35,
+    "repository": "django/django"
+  }
+}

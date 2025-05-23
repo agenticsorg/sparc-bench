@@ -1,0 +1,23 @@
+{
+  "mode": "spec-pseudocode",
+  "task_id": "astropy__astropy-6938",
+  "status": "completed",
+  "start_time": "2025-05-23T01:15:50.306523",
+  "end_time": "2025-05-23T01:15:50.306531",
+  "output": {
+    "specification": "Parsed problem statement for astropy__astropy-6938",
+    "requirements": [
+      "Fix separability matrix computation",
+      "Handle nested CompoundModels"
+    ],
+    "acceptance_criteria": [
+      "Tests pass",
+      "No regressions"
+    ]
+  },
+  "metadata": {
+    "complexity_score": 5,
+    "estimated_time": 40,
+    "repository": "astropy/astropy"
+  }
+}

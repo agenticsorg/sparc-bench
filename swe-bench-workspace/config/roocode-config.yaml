@@ -1,5 +1,5 @@
 # roocode SPARC Configuration for SWE-bench
-github_token: ${GITHUB_TOKEN}
+github_token: 'your_github_token_here'
 benchmark_mode: 'native'
 docker_enabled: false
 agent_system: 'roocode_sparc'

@@ -1,0 +1,37 @@
+{
+  "generated_at": "2025-05-23T01:14:27.559539",
+  "workspace_dir": ".",
+  "datasets": {
+    "lite": {
+      "total_tasks": 300,
+      "validation": {
+        "total_tasks": 300,
+        "valid_tasks": 300,
+        "invalid_tasks": 0,
+        "missing_fields": {},
+        "validation_errors": []
+      },
+      "complexity_distribution": {
+        "6": 134,
+        "8": 16,
+        "5": 79,
+        "4": 25,
+        "7": 46
+      },
+      "repository_distribution": {
+        "astropy/astropy": 6,
+        "django/django": 114,
+        "matplotlib/matplotlib": 23,
+        "mwaskom/seaborn": 4,
+        "pallets/flask": 3,
+        "psf/requests": 6,
+        "pydata/xarray": 5,
+        "pylint-dev/pylint": 6,
+        "pytest-dev/pytest": 17,
+        "scikit-learn/scikit-learn": 23,
+        "sphinx-doc/sphinx": 16,
+        "sympy/sympy": 77
+      }
+    }
+  }
+}

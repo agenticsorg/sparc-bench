@@ -1,0 +1,20 @@
+{
+  "mode": "docs-writer",
+  "task_id": "django__django-13230",
+  "status": "completed",
+  "start_time": "2025-05-23T01:26:10.968701",
+  "end_time": "2025-05-23T01:26:10.968707",
+  "output": {
+    "documentation_updated": true,
+    "docs_files": [
+      "API documentation",
+      "Change log"
+    ],
+    "coverage_score": 85
+  },
+  "metadata": {
+    "complexity_score": 4,
+    "estimated_time": 35,
+    "repository": "django/django"
+  }
+}

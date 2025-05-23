@@ -1,34 +1,62 @@
 #!/bin/bash
 
 # SWE-bench Environment Setup Script
-# This script sets up the environment for running SWE-bench with roocode SPARC
+# Configures environment variables without hardcoding values
 
 set -e
 
-echo "Setting up SWE-bench environment..."
+echo "🔧 Setting up SWE-bench environment configuration..."
 
-# Check if required environment variables are set
+# Source parent .env file if it exists
+if [ -f "../.env" ]; then
+    echo "📄 Loading environment from parent .env file..."
+    source "../.env"
+else
+    echo "⚠️  No parent .env file found, using environment defaults"
+fi
+
+# Validate required environment variables
 if [ -z "$GITHUB_TOKEN" ]; then
-    echo "Warning: GITHUB_TOKEN environment variable is not set"
-    echo "Please set your GitHub Personal Access Token:"
-    echo "export GITHUB_TOKEN=your_token_here"
+    echo "❌ GITHUB_TOKEN not found in environment"
+    echo "   Please set GITHUB_TOKEN in parent .env file or environment"
+    exit 1
 fi
 
-# Create necessary directories
-mkdir -p logs
-mkdir -p results
+echo "✅ GITHUB_TOKEN found in environment"
 
-# Install SWE-bench if not already installed
-if [ ! -d "SWE-bench" ]; then
-    echo "Cloning SWE-bench repository..."
-    git clone https://github.com/princeton-nlp/SWE-bench.git
-fi
+# Create .env file with environment variable references
+cat > .env << EOF
+# SWE-bench Environment Configuration
+# Values sourced from environment variables
 
-# Install dependencies
-echo "Installing SWE-bench dependencies..."
-cd SWE-bench
-pip install -e .
-cd ..
+# GitHub token for API access (from environment)
+GITHUB_TOKEN=\${GITHUB_TOKEN}
 
-echo "Environment setup complete!"
-echo "You can now run: python run-native-benchmark.py"
+# roocode SPARC configuration
+ROOCODE_API_ENDPOINT=\${ROOCODE_API_ENDPOINT:-http://localhost:8080}
+
+# SWE-bench native mode settings
+SWE_BENCH_DOCKER_DISABLED=true
+SWE_BENCH_NATIVE_MODE=true
+
+# Workspace paths (auto-detected)
+SWE_BENCH_WORKSPACE=\$(pwd)
+PYTHONPATH=\$(pwd)/SWE-bench:\$PYTHONPATH
+EOF
+
+echo "✅ Environment configuration created"
+echo "🔐 GitHub token will be loaded from environment variables"
+echo "📁 Workspace paths will be auto-detected"
+
+# Export environment variables for current session
+export SWE_BENCH_DOCKER_DISABLED=true
+export SWE_BENCH_NATIVE_MODE=true
+export SWE_BENCH_WORKSPACE=$(pwd)
+export PYTHONPATH=$(pwd)/SWE-bench:$PYTHONPATH
+
+echo "🚀 Environment setup complete!"
+echo ""
+echo "Current environment:"
+echo "   GITHUB_TOKEN: ${GITHUB_TOKEN:0:7}... (masked)"
+echo "   SWE_BENCH_WORKSPACE: $SWE_BENCH_WORKSPACE"
+echo "   SWE_BENCH_NATIVE_MODE: $SWE_BENCH_NATIVE_MODE"

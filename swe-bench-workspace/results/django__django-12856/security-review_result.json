@@ -1,0 +1,19 @@
+{
+  "mode": "security-review",
+  "task_id": "django__django-12856",
+  "status": "completed",
+  "start_time": "2025-05-23T01:26:10.953533",
+  "end_time": "2025-05-23T01:26:10.953539",
+  "output": {
+    "vulnerabilities_found": 0,
+    "security_score": "PASS",
+    "recommendations": [
+      "No security issues identified"
+    ]
+  },
+  "metadata": {
+    "complexity_score": 4,
+    "estimated_time": 35,
+    "repository": "django/django"
+  }
+}

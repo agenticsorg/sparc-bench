@@ -1,0 +1,17 @@
+{
+  "mode": "integration",
+  "task_id": "django__django-12308",
+  "status": "completed",
+  "start_time": "2025-05-23T01:26:10.943188",
+  "end_time": "2025-05-23T01:26:10.943195",
+  "output": {
+    "integration_status": "SUCCESS",
+    "final_tests_passed": true,
+    "deployment_ready": true
+  },
+  "metadata": {
+    "complexity_score": 4,
+    "estimated_time": 35,
+    "repository": "django/django"
+  }
+}

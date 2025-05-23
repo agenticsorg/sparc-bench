@@ -1,0 +1,20 @@
+{
+  "mode": "code",
+  "task_id": "astropy__astropy-14182",
+  "status": "completed",
+  "start_time": "2025-05-23T01:15:50.294085",
+  "end_time": "2025-05-23T01:15:50.294092",
+  "output": {
+    "patch_generated": true,
+    "files_modified": [
+      "astropy/modeling/separable.py"
+    ],
+    "lines_changed": 1,
+    "patch_content": "diff --git a/astropy/io/ascii/rst.py b/astropy/io/ascii/rst.py\n--- a/astropy/io/ascii/rst.py\n+++ b/astropy/io/ascii/rst.py\n@@ -27,7 +27,6 @@ def get_fixedwidth_params(self, line):\n \n \n class SimpleRSTData(FixedWidthData):\n-    start_line = 3\n     end_line = -1\n     splitter_class = FixedWidthTwoLineDataSplitter\n \n@@ -39,12 +38,29 @@ class RST(FixedWidth):\n \n     Example::\n \n-        ==== ===== ======\n-        Col1  Col2  Col3\n-        ==== ===== ======\n-          1    2.3  Hello\n-          2    4.5  Worlds\n-        ==== ===== ======\n+      >>> from astropy.table import QTable\n+      >>> import astropy.units as u\n+      >>> import sys\n+      >>> tbl = QTable({\"wave\": [350, 950] * u.nm, \"response\": [0.7, 1.2] * u.count})\n+      >>> tbl.write(sys.stdout,  format=\"ascii.rst\")\n+      ===== ========\n+       wave response\n+      ===== ========\n+      350.0      0.7\n+      950.0      1.2\n+      ===== ========\n+\n+    Like other fixed-width formats, when writing a table you can provide ``header_rows``\n+    to specify a list of table rows to output as the header.  For example::\n+\n+      >>> tbl.write(sys.stdout,  format=\"ascii.rst\", header_rows=['name', 'unit'])\n+      ===== ========\n+       wave response\n+         nm       ct\n+      ===== ========\n+      350.0      0.7\n+      950.0      1.2\n+      ===== ========\n \n     Currently there is no support for reading tables which utilize continuation lines,\n     or for ones which define column spans through the use of an additional\n@@ -57,10 +73,15 @@ class RST(FixedWidth):\n     data_class = SimpleRSTData\n     header_class = SimpleRSTHeader\n \n-    def __init__(self):\n-        super().__init__(delimiter_pad=None, bookend=False)\n+    def __init__(self, header_rows=None):\n+        super().__init__(delimiter_pad=None, bookend=False, header_rows=header_rows)\n \n     def write(self, lines):\n         lines = super().write(lines)\n-        lines = [lines[1]] + lines + [lines[1]]\n+        idx = len(self.header.header_rows)\n+        lines = [lines[idx]] + lines + [lines[idx]]\n         return lines\n+\n+    def read(self, table):\n+        self.data.start_line = 2 + len(self.header.header_rows)\n+        return super().read(table)\n"
+  },
+  "metadata": {
+    "complexity_score": 8,
+    "estimated_time": 55,
+    "repository": "astropy/astropy"
+  }
+}

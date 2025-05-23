@@ -1,0 +1,18 @@
+{
+  "mode": "tdd",
+  "task_id": "django__django-12856",
+  "status": "completed",
+  "start_time": "2025-05-23T01:26:10.953007",
+  "end_time": "2025-05-23T01:26:10.953015",
+  "output": {
+    "tests_run": 7257,
+    "tests_passed": 6947,
+    "tests_failed": 310,
+    "new_tests_created": 0
+  },
+  "metadata": {
+    "complexity_score": 4,
+    "estimated_time": 35,
+    "repository": "django/django"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "mode": "code",
+  "task_id": "astropy__astropy-6938",
+  "status": "completed",
+  "start_time": "2025-05-23T01:15:50.307108",
+  "end_time": "2025-05-23T01:15:50.307115",
+  "output": {
+    "patch_generated": true,
+    "files_modified": [
+      "astropy/modeling/separable.py"
+    ],
+    "lines_changed": 1,
+    "patch_content": "diff --git a/astropy/io/fits/fitsrec.py b/astropy/io/fits/fitsrec.py\n--- a/astropy/io/fits/fitsrec.py\n+++ b/astropy/io/fits/fitsrec.py\n@@ -1261,7 +1261,7 @@ def _scale_back_ascii(self, col_idx, input_field, output_field):\n \n         # Replace exponent separator in floating point numbers\n         if 'D' in format:\n-            output_field.replace(encode_ascii('E'), encode_ascii('D'))\n+            output_field[:] = output_field.replace(b'E', b'D')\n \n \n def _get_recarray_field(array, key):\n"
+  },
+  "metadata": {
+    "complexity_score": 5,
+    "estimated_time": 40,
+    "repository": "astropy/astropy"
+  }
+}

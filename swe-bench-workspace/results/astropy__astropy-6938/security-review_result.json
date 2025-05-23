@@ -1,0 +1,19 @@
+{
+  "mode": "security-review",
+  "task_id": "astropy__astropy-6938",
+  "status": "completed",
+  "start_time": "2025-05-23T01:15:50.309073",
+  "end_time": "2025-05-23T01:15:50.309081",
+  "output": {
+    "vulnerabilities_found": 0,
+    "security_score": "PASS",
+    "recommendations": [
+      "No security issues identified"
+    ]
+  },
+  "metadata": {
+    "complexity_score": 5,
+    "estimated_time": 40,
+    "repository": "astropy/astropy"
+  }
+}

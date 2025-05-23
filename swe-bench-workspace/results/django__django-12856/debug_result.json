@@ -1,0 +1,22 @@
+{
+  "mode": "debug",
+  "task_id": "django__django-12856",
+  "status": "completed",
+  "start_time": "2025-05-23T01:26:10.953276",
+  "end_time": "2025-05-23T01:26:10.953283",
+  "output": {
+    "issues_found": 310,
+    "debug_actions": [
+      "Analyzed test failures",
+      "Identified root cause"
+    ],
+    "resolution_steps": [
+      "Updated matrix assignment logic"
+    ]
+  },
+  "metadata": {
+    "complexity_score": 4,
+    "estimated_time": 35,
+    "repository": "django/django"
+  }
+}

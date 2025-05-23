@@ -1,0 +1,62 @@
+{
+  "benchmark_type": "swe-bench-lite",
+  "agent_system": "roocode_sparc",
+  "execution_summary": {
+    "total_tasks": 3,
+    "completed_tasks": 0,
+    "failed_tasks": 3,
+    "mode_performance": {},
+    "start_time": "2025-05-23T01:31:55.153997",
+    "end_time": "2025-05-23T01:31:55.241958"
+  },
+  "dataset_statistics": {
+    "total_tasks": 3,
+    "successful_tasks": 0,
+    "failed_tasks": 3
+  },
+  "performance_metrics": {
+    "success_rate": 0.0,
+    "average_completion_time": 0,
+    "complexity_distribution": {
+      "4": 3
+    },
+    "repository_distribution": {
+      "django/django": 3
+    }
+  },
+  "mode_performance": {
+    "specification": {
+      "executed": 0,
+      "success": 0
+    },
+    "architecture": {
+      "executed": 0,
+      "success": 0
+    },
+    "implementation": {
+      "executed": 0,
+      "success": 0
+    },
+    "testing": {
+      "executed": 0,
+      "success": 0
+    },
+    "debugging": {
+      "executed": 0,
+      "success": 0
+    },
+    "security_review": {
+      "executed": 0,
+      "success": 0
+    },
+    "documentation": {
+      "executed": 0,
+      "success": 0
+    },
+    "integration": {
+      "executed": 0,
+      "success": 0
+    }
+  },
+  "generated_at": "2025-05-23T01:31:55.241979"
+}

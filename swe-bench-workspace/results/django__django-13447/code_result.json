@@ -1,0 +1,20 @@
+{
+  "mode": "code",
+  "task_id": "django__django-13447",
+  "status": "completed",
+  "start_time": "2025-05-23T01:26:10.987066",
+  "end_time": "2025-05-23T01:26:10.987074",
+  "output": {
+    "patch_generated": true,
+    "files_modified": [
+      "astropy/modeling/separable.py"
+    ],
+    "lines_changed": 1,
+    "patch_content": "diff --git a/django/contrib/admin/sites.py b/django/contrib/admin/sites.py\n--- a/django/contrib/admin/sites.py\n+++ b/django/contrib/admin/sites.py\n@@ -461,6 +461,7 @@ def _build_app_dict(self, request, label=None):\n \n             info = (app_label, model._meta.model_name)\n             model_dict = {\n+                'model': model,\n                 'name': capfirst(model._meta.verbose_name_plural),\n                 'object_name': model._meta.object_name,\n                 'perms': perms,\n"
+  },
+  "metadata": {
+    "complexity_score": 4,
+    "estimated_time": 35,
+    "repository": "django/django"
+  }
+}

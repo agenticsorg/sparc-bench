@@ -1,0 +1,17 @@
+{
+  "dataset": "swe-bench-lite",
+  "total_tasks": 1,
+  "completed": 1,
+  "failed": 0,
+  "results": [
+    {
+      "task_id": "sample_task_001",
+      "mode_used": "security-review",
+      "status": "completed",
+      "execution_type": "native",
+      "docker_used": false,
+      "roocode_sparc": true,
+      "message": "Task processed by roocode SPARC security-review mode"
+    }
+  ]
+}

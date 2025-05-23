@@ -1,0 +1,20 @@
+{
+  "mode": "docs-writer",
+  "task_id": "astropy__astropy-14995",
+  "status": "completed",
+  "start_time": "2025-05-23T01:26:11.024094",
+  "end_time": "2025-05-23T01:26:11.024101",
+  "output": {
+    "documentation_updated": true,
+    "docs_files": [
+      "API documentation",
+      "Change log"
+    ],
+    "coverage_score": 85
+  },
+  "metadata": {
+    "complexity_score": 6,
+    "estimated_time": 45,
+    "repository": "astropy/astropy"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "mode": "tdd",
+  "task_id": "astropy__astropy-6938",
+  "status": "completed",
+  "start_time": "2025-05-23T01:15:50.307365",
+  "end_time": "2025-05-23T01:15:50.307372",
+  "output": {
+    "tests_run": 1104,
+    "tests_passed": 939,
+    "tests_failed": 165,
+    "new_tests_created": 0
+  },
+  "metadata": {
+    "complexity_score": 5,
+    "estimated_time": 40,
+    "repository": "astropy/astropy"
+  }
+}

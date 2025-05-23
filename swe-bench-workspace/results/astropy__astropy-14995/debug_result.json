@@ -1,0 +1,22 @@
+{
+  "mode": "debug",
+  "task_id": "astropy__astropy-14995",
+  "status": "completed",
+  "start_time": "2025-05-23T01:26:11.022888",
+  "end_time": "2025-05-23T01:26:11.022896",
+  "output": {
+    "issues_found": 84,
+    "debug_actions": [
+      "Analyzed test failures",
+      "Identified root cause"
+    ],
+    "resolution_steps": [
+      "Updated matrix assignment logic"
+    ]
+  },
+  "metadata": {
+    "complexity_score": 6,
+    "estimated_time": 45,
+    "repository": "astropy/astropy"
+  }
+}

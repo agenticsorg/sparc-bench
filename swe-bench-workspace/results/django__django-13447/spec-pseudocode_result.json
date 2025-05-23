@@ -1,0 +1,23 @@
+{
+  "mode": "spec-pseudocode",
+  "task_id": "django__django-13447",
+  "status": "completed",
+  "start_time": "2025-05-23T01:30:04.412337",
+  "end_time": "2025-05-23T01:30:04.412346",
+  "output": {
+    "specification": "Parsed problem statement for django__django-13447",
+    "requirements": [
+      "Fix separability matrix computation",
+      "Handle nested CompoundModels"
+    ],
+    "acceptance_criteria": [
+      "Tests pass",
+      "No regressions"
+    ]
+  },
+  "metadata": {
+    "complexity_score": 4,
+    "estimated_time": 35,
+    "repository": "django/django"
+  }
+}

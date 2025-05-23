@@ -1,0 +1,139 @@
+{
+  "timestamp": "2025-05-23T01:17:54.666348",
+  "environment": {
+    "version": "3.12.1 (main, Mar 17 2025, 17:13:06) [GCC 9.4.0]",
+    "version_info": {
+      "major": 3,
+      "minor": 12,
+      "micro": 1
+    },
+    "executable": "/home/codespace/.python/current/bin/python3",
+    "platform": "linux",
+    "status": "valid"
+  },
+  "dependencies": {
+    "required": {
+      "numpy": "installed",
+      "scipy": "installed",
+      "pandas": "installed",
+      "matplotlib": "installed",
+      "requests": "installed",
+      "yaml": "installed",
+      "datasets": "installed",
+      "transformers": "installed",
+      "torch": "installed"
+    },
+    "optional": {
+      "jupyter": "installed",
+      "notebook": "missing",
+      "tqdm": "installed",
+      "pytest": "missing"
+    },
+    "missing_required": [],
+    "missing_optional": [
+      "notebook",
+      "pytest"
+    ],
+    "status": "valid"
+  },
+  "swe_bench": {
+    "installation_path": "SWE-bench",
+    "version": "4.0.3",
+    "importable": true,
+    "cli_accessible": false,
+    "dataset_loadable": true,
+    "status": "valid"
+  },
+  "roocode_config": {
+    "config_file_exists": true,
+    "env_file_exists": true,
+    "github_token_configured": true,
+    "native_mode_enabled": true,
+    "docker_disabled": true,
+    "agent_system_correct": true,
+    "status": "valid"
+  },
+  "datasets": {
+    "datasets_dir_exists": true,
+    "lite_dataset_available": true,
+    "lite_task_list_exists": true,
+    "full_dataset_available": false,
+    "dataset_summary_exists": true,
+    "lite_task_count": 300,
+    "status": "valid"
+  },
+  "workspace": {
+    "required_dirs": {
+      "datasets": {
+        "exists": true,
+        "writable": true,
+        "path": "datasets"
+      },
+      "logs": {
+        "exists": true,
+        "writable": true,
+        "path": "logs"
+      },
+      "results": {
+        "exists": true,
+        "writable": true,
+        "path": "results"
+      },
+      "config": {
+        "exists": true,
+        "writable": true,
+        "path": "config"
+      },
+      "SWE-bench": {
+        "exists": true,
+        "writable": true,
+        "path": "SWE-bench"
+      }
+    },
+    "optional_dirs": {
+      "temp": {
+        "exists": false,
+        "writable": false,
+        "path": "temp"
+      },
+      "cache": {
+        "exists": false,
+        "writable": false,
+        "path": "cache"
+      },
+      "backups": {
+        "exists": false,
+        "writable": false,
+        "path": "backups"
+      }
+    },
+    "key_files": {
+      "validate-setup.py": {
+        "exists": true,
+        "executable": true,
+        "path": "validate-setup.py"
+      },
+      "dataset_manager.py": {
+        "exists": true,
+        "executable": false,
+        "path": "dataset_manager.py"
+      },
+      "swe_bench_orchestrator.py": {
+        "exists": true,
+        "executable": false,
+        "path": "swe_bench_orchestrator.py"
+      },
+      "environment_validator.py": {
+        "exists": true,
+        "executable": false,
+        "path": "environment_validator.py"
+      }
+    },
+    "permissions": {
+      "workspace_writable": true,
+      "workspace_readable": true
+    },
+    "status": "valid"
+  },
+  "overall_status": "valid"
+}

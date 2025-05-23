@@ -1,0 +1,8 @@
+{
+  "instance_id": "sample_task_001",
+  "repo": "example/repo",
+  "problem_statement": "Fix the authentication bug in the login system",
+  "mode": "security-review",
+  "workspace": "results/sample_task_001",
+  "timestamp": ""
+}
