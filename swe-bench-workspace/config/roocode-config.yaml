@@ -1,0 +1,26 @@
+# roocode SPARC Configuration for SWE-bench
+github_token: ${GITHUB_TOKEN}
+benchmark_mode: 'native'
+docker_enabled: false
+agent_system: 'roocode_sparc'
+
+# roocode mode assignments for SWE tasks
+task_routing:
+  patch_generation: 'code'
+  test_execution: 'tdd' 
+  code_analysis: 'debug'
+  security_review: 'security-review'
+  integration: 'integration'
+  
+# Benchmark settings
+swe_bench:
+  lite_enabled: true
+  full_enabled: true
+  max_concurrent_tasks: 4
+  timeout_minutes: 30
+
+# Logging and monitoring
+logging:
+  level: 'INFO'
+  log_dir: './logs'
+  metrics_enabled: true
