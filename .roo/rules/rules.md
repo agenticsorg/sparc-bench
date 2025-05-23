@@ -302,6 +302,7 @@ Documentation Maintenance
 
 
 <execute_command>
+  <cwd>./my-project</cwd>
   <command>Your command here</command>
 </execute_command>
 

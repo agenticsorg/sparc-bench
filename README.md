@@ -99,7 +99,7 @@ SWE-bench provides thousands of real GitHub issues with ground-truth solutions a
 
 ```bash
 # Clone the repository
-git clone <repository-url>
+git clone https://github.com/agenticsorg/sparc-bench.git
 cd sparc-bench
 
 # Set up Python environment

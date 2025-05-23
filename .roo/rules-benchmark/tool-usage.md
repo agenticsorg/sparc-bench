@@ -14,13 +14,13 @@ The `new_task` tool is the cornerstone of benchmark orchestration. It delegates 
 
 ### Mode Selection Guidelines
 
-| Problem Type | Target Mode | Criteria |
-|--------------|-------------|----------|
-| Code Implementation | `code` | General feature implementation, algorithm fixes |
-| Test Issues | `tdd` | Test failures, coverage problems, testing frameworks |
-| Bug Analysis | `debug` | Runtime errors, logic bugs, performance issues |
-| Security Problems | `security-review` | Auth issues, input validation, security vulnerabilities |
-| Integration Issues | `integration` | API integration, service communication, dependency conflicts |
+| Problem Type        | Target Mode       | Criteria                                                     |
+| ------------------- | ----------------- | ------------------------------------------------------------ |
+| Code Implementation | `code`            | General feature implementation, algorithm fixes              |
+| Test Issues         | `tdd`             | Test failures, coverage problems, testing frameworks         |
+| Bug Analysis        | `debug`           | Runtime errors, logic bugs, performance issues               |
+| Security Problems   | `security-review` | Auth issues, input validation, security vulnerabilities      |
+| Integration Issues  | `integration`     | API integration, service communication, dependency conflicts |
 
 ### Message Formatting Template
 
@@ -57,6 +57,8 @@ Begin your implementation now.
 
 ### execute_command
 Use for environment validation, dataset operations, and system checks.
+CRITICAL: All commands must be executed from the current workspace root, which VSCode calls `${workspaceFolder}`.
+ALWAYS set the cwd for `execute_command` to the workspace root.
 
 ```xml
 <execute_command>
@@ -77,16 +79,9 @@ Use for result processing, report generation, and configuration updates.
 <apply_diff>
 <path>benchmark-results/summary.json</path>
 <diff>
-<<<<<<< SEARCH
-:start_line:10
--------
-  "total_tasks": 100,
-  "completed": 85
-=======
   "total_tasks": 100,
   "completed": 95,
   "success_rate": "95%"
->>>>>>> REPLACE
 </diff>
 </apply_diff>
 ```
