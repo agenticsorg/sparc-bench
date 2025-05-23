@@ -25,7 +25,7 @@ fi
 # Install SWE-bench dependencies (native mode)
 echo "🔧 Installing SWE-bench dependencies (native mode)..."
 cd swe-bench-workspace/SWE-bench
-pip install -e . --no-deps
+pip install -e .
 pip install datasets transformers jsonlines tqdm
 
 # Create roocode configuration
