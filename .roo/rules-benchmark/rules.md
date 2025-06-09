@@ -125,9 +125,11 @@ Note: Only work on the specific problem. Do not clone entire repository.
 
 ### Phase 2: Task Selection & Preparation
 1. **Query Database for Available Tasks**:
-   ```bash
-   cd swe-bench-sqlite/scripts
-   python query_swe_bench_db.py "SELECT instance_id, repo, problem_statement, hints_text, fail_to_pass, pass_to_pass, base_commit FROM swe_bench_tasks WHERE completion_status = 'not_started' ORDER BY RANDOM() LIMIT 1;"
+   ```xml
+   <execute_command>
+     <cwd>swe-bench-sqlite/scripts</cwd>
+     <command>python query_swe_bench_db.py "SELECT instance_id, repo, problem_statement, hints_text, fail_to_pass, pass_to_pass, base_commit FROM swe_bench_tasks WHERE completion_status = 'not_started' ORDER BY RANDOM() LIMIT 1;"</command>
+   </execute_command>
    ```
 
 2. **Format Task Context** (without revealing solution):
@@ -212,7 +214,8 @@ Note: Only work on the specific problem. Do not clone entire repository.
 - `execute_command`: Use for environment validation and dataset operations
   ```
   <execute_command>
-    <command>python3 validate-swe-setup.py</command>
+    <cwd>swe-bench-workspace</cwd>
+    <command>python3 validate-setup.py</command>
   </execute_command>
   ```
 
@@ -235,42 +238,48 @@ Note: Only work on the specific problem. Do not clone entire repository.
 - `execute_command`: Use for secure task selection (NO solution exposure)
   ```
   <execute_command>
-    <command>cd swe-bench-sqlite/scripts && python benchmark_db_helper.py get_task</command>
+    <cwd>swe-bench-sqlite/scripts</cwd>
+    <command>python benchmark_db_helper.py get_task</command>
   </execute_command>
   ```
 
 - `execute_command`: Use for repository-specific task selection
   ```
   <execute_command>
-    <command>cd swe-bench-sqlite/scripts && python benchmark_db_helper.py get_task_repo django/django</command>
+    <cwd>swe-bench-sqlite/scripts</cwd>
+    <command>python benchmark_db_helper.py get_task_repo django/django</command>
   </execute_command>
   ```
 
 - `execute_command`: Use for status updates after task completion
   ```
   <execute_command>
-    <command>cd swe-bench-sqlite/scripts && python benchmark_db_helper.py update_status django__django-11179 completed "Successfully solved via code mode"</command>
+    <cwd>swe-bench-sqlite/scripts</cwd>
+    <command>python benchmark_db_helper.py update_status django__django-11179 completed "Successfully solved via code mode"</command>
   </execute_command>
   ```
 
 - `execute_command`: Use for solution reveal ONLY after completion
   ```
   <execute_command>
-    <command>cd swe-bench-sqlite/scripts && python benchmark_db_helper.py get_solution django__django-11179</command>
+    <cwd>swe-bench-sqlite/scripts</cwd>
+    <command>python benchmark_db_helper.py get_solution django__django-11179</command>
   </execute_command>
   ```
 
 - `execute_command`: Use for progress monitoring and statistics
   ```
   <execute_command>
-    <command>cd swe-bench-sqlite/scripts && python benchmark_db_helper.py summary</command>
+    <cwd>swe-bench-sqlite/scripts</cwd>
+    <command>python benchmark_db_helper.py summary</command>
   </execute_command>
   ```
 
 - `execute_command`: Use for step-based analytics and complexity analysis
   ```
   <execute_command>
-    <command>cd swe-bench-sqlite/scripts && python benchmark_db_helper.py step_analytics</command>
+    <cwd>swe-bench-sqlite/scripts</cwd>
+    <command>python benchmark_db_helper.py step_analytics</command>
   </execute_command>
   ```
 
