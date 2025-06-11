@@ -14,13 +14,13 @@ The `new_task` tool is the cornerstone of benchmark orchestration. It delegates 
 
 ### Mode Selection Guidelines
 
-| Problem Type | Target Mode | Criteria |
-|--------------|-------------|----------|
-| Code Implementation | `code` | General feature implementation, algorithm fixes |
-| Test Issues | `tdd` | Test failures, coverage problems, testing frameworks |
-| Bug Analysis | `debug` | Runtime errors, logic bugs, performance issues |
-| Security Problems | `security-review` | Auth issues, input validation, security vulnerabilities |
-| Integration Issues | `integration` | API integration, service communication, dependency conflicts |
+| Problem Type        | Target Mode       | Criteria                                                     |
+| ------------------- | ----------------- | ------------------------------------------------------------ |
+| Code Implementation | `code`            | General feature implementation, algorithm fixes              |
+| Test Issues         | `tdd`             | Test failures, coverage problems, testing frameworks         |
+| Bug Analysis        | `debug`           | Runtime errors, logic bugs, performance issues               |
+| Security Problems   | `security-review` | Auth issues, input validation, security vulnerabilities      |
+| Integration Issues  | `integration`     | API integration, service communication, dependency conflicts |
 
 ### Message Formatting Template
 
@@ -57,10 +57,15 @@ Begin your implementation now.
 
 ### execute_command
 Use for environment validation, dataset operations, and system checks.
+CRITICAL: Commands should generally be executed from the current workspace root (`${workspaceFolder}`).
+- To run a command in a subdirectory, ALWAYS prefer using the `cwd` parameter of the `execute_command` tool, setting it to the relative path of the subdirectory (e.g., `<cwd>./my_subdirectory</cwd>`).
+- If a command string *must* include a directory change (e.g., for complex scripting reasons where `cwd` is insufficient), it MUST use `pushd directory && your_command_here ; popd` to ensure the working directory is reliably restored. Avoid `cd` directly in command strings.
+ALWAYS ensure the `cwd` parameter is explicitly set. If the command should run in the workspace root, set `<cwd>.</cwd>`.
 
 ```xml
 <execute_command>
-<command>python3 validate-swe-setup.py --check-all</command>
+<cwd>swe-bench-workspace</cwd>
+<command>python3 validate-setup.py --check-all</command>
 </execute_command>
 ```
 
@@ -77,16 +82,9 @@ Use for result processing, report generation, and configuration updates.
 <apply_diff>
 <path>benchmark-results/summary.json</path>
 <diff>
-<<<<<<< SEARCH
-:start_line:10
--------
-  "total_tasks": 100,
-  "completed": 85
-=======
   "total_tasks": 100,
   "completed": 95,
   "success_rate": "95%"
->>>>>>> REPLACE
 </diff>
 </apply_diff>
 ```
